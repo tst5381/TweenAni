@@ -61,6 +61,7 @@ namespace TweenAni
             else
             {
                 EditorGUI.LabelField(GetColumnInRow(omitWidth), omitSymbol);
+                NextColumn(omitWidth);
                 return;
             }
 
@@ -73,6 +74,7 @@ namespace TweenAni
             else
             {
                 EditorGUI.LabelField(GetColumnInRow(omitWidth), omitSymbol);
+                NextColumn(omitWidth);
                 return;
             }
         }
