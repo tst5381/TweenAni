@@ -10,7 +10,7 @@ namespace TweenAni
     {
         [SerializeField] float timeScale = 1f;
         [SerializeField, Range(-1, 10)] int loops = 1;
-        [SerializeField] List<TweenerPreset> tweenerPresets;
+        [SerializeField] List<TweenerPreset> tweenerPresets = new List<TweenerPreset>();
 
         Sequence sequenceInPlay = null;
         public bool isPlaying => sequenceInPlay != null;

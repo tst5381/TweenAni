@@ -13,8 +13,6 @@ namespace TweenAni
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            EditorUtility.SetDirty(property.serializedObject.targetObject); // TODO: better place?
-
             string id = property.propertyPath;
             float height = viewStates.ContainsKey(id) ? viewStates[id].height : 0;
             return height + EditorGUIUtility.singleLineHeight;
@@ -69,8 +67,8 @@ namespace TweenAni
                 var from = property.FindPropertyRelative("from");
                 var fromRelative = property.FindPropertyRelative("fromRelative");
 
-                helper.DrawPropertyInline("Disable", disabled, 120);
-                helper.DrawPropertyInline("Label", name);
+                helper.DrawPropertyInline("Label", name, 120);
+                helper.DrawPropertyInline("Disable", disabled);
                 helper.EndOfInlineProperties();
 
                 if (disabled.boolValue) { GUI.enabled = false; }

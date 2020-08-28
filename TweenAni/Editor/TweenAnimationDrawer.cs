@@ -13,8 +13,6 @@ namespace TweenAni
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            EditorUtility.SetDirty(property.serializedObject.targetObject); // TODO: better place?
-
             string id = property.propertyPath;
             float height = viewStates.ContainsKey(id) ? viewStates[id].height : 0;
             return height + EditorGUIUtility.singleLineHeight;
